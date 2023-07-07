@@ -69,6 +69,9 @@ mongoose.connect(process.env.MONGO_URL, {
   })
   .then(() => {
     app.listen(process.env.PORT, () => console.log(`Server Port: ${PORT}`));
+    app.get("/", (req, res) => {
+      res.send("AKCRH Server is running");
+    });
 
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
