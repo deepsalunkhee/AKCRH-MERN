@@ -67,7 +67,8 @@ const Form = () => {
       "https://akcrh-server.vercel.app/auth/register",
       {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+         body: JSON.stringify(values),
       }
     );
     const savedUser = await savedUserResponse.json();
